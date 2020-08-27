@@ -13,9 +13,11 @@ import java.util.ArrayList;
 public class AdaptadorDatos extends RecyclerView.Adapter<AdaptadorDatos.ViewHolderDatos> {
 
     ArrayList<String>  listDatos;
+    private TraspasoDatos traspaso;
 
-    public AdaptadorDatos(ArrayList<String> listDatos) {
+    public AdaptadorDatos(ArrayList<String> listDatos,TraspasoDatos traspaso) {
         this.listDatos = listDatos;
+        this.traspaso=traspaso;
     }
 
 
@@ -29,7 +31,7 @@ public class AdaptadorDatos extends RecyclerView.Adapter<AdaptadorDatos.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderDatos holder, int position) {
-     holder.asignarDatos(listDatos.get(position));
+     holder.datos.setText(listDatos.get(position));
     }
 
     @Override
@@ -37,15 +39,27 @@ public class AdaptadorDatos extends RecyclerView.Adapter<AdaptadorDatos.ViewHold
         return listDatos.size();
     }
 
-    public class ViewHolderDatos extends RecyclerView.ViewHolder {
+    public class ViewHolderDatos extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView datos;
+
         public ViewHolderDatos(@NonNull View itemView) {
             super(itemView);
             datos= itemView.findViewById(R.id.idDatos);
+            itemView.setOnClickListener(this);
         }
 
-        public void asignarDatos(String s) {
-            datos.setText(s);
+        @Override
+        public void onClick(View view) {
+            traspaso.asignardatos(listDatos.get(getAdapterPosition()));
+
         }
+
+
+        //      datos.setText(s);
+
+    }
+    interface TraspasoDatos{
+        void asignardatos (String s);
+
     }
 }
