@@ -7,6 +7,10 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="mail">Ingrese su email</string>
+    <string name="pass">Ingrese su contraseña</string>
+    <string name="textboton">Ingrese</string>
+
     <string name="hello_first_fragment">Primer Fragmento</string>
     <string name="hello_second_fragment">Segundo Fragmento</string>
     <!-- TODO: Remove or change this placeholder text -->
