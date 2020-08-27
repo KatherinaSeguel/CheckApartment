@@ -10,6 +10,8 @@
     <string name="mail">Ingrese su email</string>
     <string name="pass">Ingrese su contraseña</string>
     <string name="textboton">Ingrese</string>
+    <string name="boton1">Guardar</string>
+    <string name="boton2">Enviar Alerta</string>
 
     <string name="hello_first_fragment">Primer Fragmento</string>
     <string name="hello_second_fragment">Segundo Fragmento</string>
