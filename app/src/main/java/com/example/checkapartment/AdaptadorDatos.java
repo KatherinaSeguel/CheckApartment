@@ -3,24 +3,26 @@ package com.example.checkapartment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class AdaptadorDatos extends RecyclerView.Adapter<AdaptadorDatos.ViewHolderDatos> {
 
-    ArrayList<String>  listDatos;
+    private List<Apartment> listDatos;
     private TraspasoDatos traspaso;
 
-    public AdaptadorDatos(ArrayList<String> listDatos,TraspasoDatos traspaso) {
+    public AdaptadorDatos(List<Apartment> listDatos, TraspasoDatos traspaso) {
         this.listDatos = listDatos;
-        this.traspaso=traspaso;
+        this.traspaso = traspaso;
     }
-
-
 
     @NonNull
     @Override
@@ -31,7 +33,12 @@ public class AdaptadorDatos extends RecyclerView.Adapter<AdaptadorDatos.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderDatos holder, int position) {
-     holder.datos.setText(listDatos.get(position));
+    // holder.datos.setText(listDatos.get(position));
+        Apartment aparment=listDatos.get(position);
+        holder.text1.setText(aparment.getBuildingName());
+        holder.text2.setText(aparment.getUnitId());
+        holder.text3.setText(aparment.getAddress());
+        Glide.with(holder.itemView.getContext()).load(aparment.getUrlImageBuilding()).into(holder.imagen1);
     }
 
     @Override
@@ -40,11 +47,17 @@ public class AdaptadorDatos extends RecyclerView.Adapter<AdaptadorDatos.ViewHold
     }
 
     public class ViewHolderDatos extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView datos;
+        TextView text1,text2,text3;
+        ImageView imagen1;
 
         public ViewHolderDatos(@NonNull View itemView) {
             super(itemView);
-            datos= itemView.findViewById(R.id.idDatos);
+
+            text1=itemView.findViewById(R.id.tv1);
+            text2=itemView.findViewById(R.id.tv2);
+            text3=itemView.findViewById(R.id.tv3);
+            imagen1=itemView.findViewById(R.id.ima1);
+
             itemView.setOnClickListener(this);
         }
 
@@ -59,7 +72,7 @@ public class AdaptadorDatos extends RecyclerView.Adapter<AdaptadorDatos.ViewHold
 
     }
     interface TraspasoDatos{
-        void asignardatos (String s);
+        void asignardatos (Apartment apartment);
 
     }
 }

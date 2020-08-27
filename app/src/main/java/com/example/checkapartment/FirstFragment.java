@@ -30,7 +30,7 @@ public class FirstFragment extends Fragment implements AdaptadorDatos.TraspasoDa
 
         mbinding2=FragmentFirstBinding.inflate(inflater,container,false);
          recyclerView=mbinding2.Recyclerid;
-        // varadapdatos=new AdaptadorDatos(listDatos,this);
+        varadapdatos=new AdaptadorDatos(ApartmentData.apartmentList(),this);
           recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
           recyclerView.setAdapter(varadapdatos);
 
@@ -51,8 +51,10 @@ public class FirstFragment extends Fragment implements AdaptadorDatos.TraspasoDa
         });
     }
 
+
+
     @Override
-    public void asignardatos(String s) {
+    public void asignardatos(Apartment apartment) {
         Navigation.findNavController(mbinding2.getRoot()).navigate(R.id.action_firstFragment_to_secondFragment2);
     }
 }
