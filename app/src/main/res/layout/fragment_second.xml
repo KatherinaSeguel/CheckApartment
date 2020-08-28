@@ -2,13 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id="@+id/constLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context=".SecondFragment"
     tools:layout_editor_absoluteY="81dp">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imagen2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -18,50 +19,39 @@
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/text1"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginStart="9dp"
         android:layout_marginTop="6dp"
-        android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imagen2" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/text2"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginStart="69dp"
         android:layout_marginTop="6dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintStart_toEndOf="@+id/text1"
+        app:layout_constraintTop_toBottomOf="@+id/imagen2" />
 
     <Switch
         android:id="@+id/switch1"
         android:layout_width="250dp"
         android:layout_height="30dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="8dp"
-        android:text="Switch"
+        android:layout_marginTop="48dp"
+        android:hint="@string/switc1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/text1" />
 
     <Switch
         android:id="@+id/switch2"
         android:layout_width="250dp"
         android:layout_height="30dp"
         android:layout_marginTop="1dp"
-        android:text="Switch"
+        android:hint="@string/switc4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switch4" />
 
@@ -71,7 +61,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
-        android:text="Switch"
+        android:hint="@string/switc2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switch1" />
 
@@ -81,7 +71,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="-1dp"
-        android:text="Switch"
+        android:hint="@string/switc3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switch3" />
 
@@ -93,29 +83,29 @@
         android:layout_marginTop="40dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+        app:layout_constraintTop_toBottomOf="@+id/rg1" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/alerta"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginStart="56dp"
         android:layout_marginTop="8dp"
-        android:hint="@string/boton1"
-        app:layout_constraintStart_toEndOf="@+id/button3"
+        android:hint="@string/boton2"
+        app:layout_constraintStart_toEndOf="@+id/guardar"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/guardar"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
-        android:hint="@string/boton2"
+        android:hint="@string/boton1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <RadioGroup
-        android:id="@+id/radioGroup2"
+        android:id="@+id/rg1"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -124,22 +114,22 @@
         app:layout_constraintTop_toBottomOf="@+id/switch2">
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/rb1"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:hint="@string/term1" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rb2"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
-            android:text="Luces" />
+            android:hint="@string/term2" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rb3"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:hint="@string/term3" />
     </RadioGroup>
 
 

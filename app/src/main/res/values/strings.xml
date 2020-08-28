@@ -13,6 +13,17 @@
     <string name="boton1">Guardar</string>
     <string name="boton2">Enviar Alerta</string>
 
+    <string name="term1">Estado Terminaciones Normal</string>
+    <string name="term2">Estado Terminaciones Regular</string>
+    <string name="term3">Estado Terminaciones Malas</string>
+
+    <string name="switc1">Luces del Apatamento</string>
+    <string name="switc2">Elementos del baño</string>
+    <string name="switc3">Elementos de la Cocina</string>
+    <string name="switc4">Elementos del dormitorio</string>
+
+
+
     <string name="hello_first_fragment">Primer Fragmento</string>
     <string name="hello_second_fragment">Segundo Fragmento</string>
     <!-- TODO: Remove or change this placeholder text -->
