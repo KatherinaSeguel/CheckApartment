@@ -76,12 +76,11 @@
         app:layout_constraintTop_toBottomOf="@+id/switch3" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/resul1"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
-        android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rg1" />
 
@@ -93,7 +92,7 @@
         android:layout_marginTop="8dp"
         android:hint="@string/boton2"
         app:layout_constraintStart_toEndOf="@+id/guardar"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/resul1" />
 
     <Button
         android:id="@+id/guardar"
@@ -102,7 +101,7 @@
         android:layout_marginTop="8dp"
         android:hint="@string/boton1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/resul1" />
 
     <RadioGroup
         android:id="@+id/rg1"
