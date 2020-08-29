@@ -9,6 +9,8 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.widget.Button;
 
 import com.example.checkapartment.databinding.FragmentLoginBinding;
 
@@ -26,6 +28,8 @@ public class loginFragment extends Fragment {
         loginFragment fragment = new loginFragment();
         return fragment;
     }
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,4 +50,6 @@ public class loginFragment extends Fragment {
       });
         return mbinding.getRoot();
     }
+
+
 }

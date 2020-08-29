@@ -55,6 +55,12 @@ public class FirstFragment extends Fragment implements AdaptadorDatos.TraspasoDa
 
     @Override
     public void asignardatos(Apartment apartment) {
-        Navigation.findNavController(mbinding2.getRoot()).navigate(R.id.action_firstFragment_to_secondFragment2);
+        Bundle contedatos = new Bundle();
+        contedatos.putString("imagendept",apartment.getUrlImageBuilding());
+        contedatos.putString("text1depto",apartment.getAddress());
+        contedatos.putString("texto2depto",apartment.getBuildingName());
+
+
+        Navigation.findNavController(mbinding2.getRoot()).navigate(R.id.action_firstFragment_to_secondFragment2,contedatos);
     }
 }

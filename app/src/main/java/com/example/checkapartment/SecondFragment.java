@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.RadioGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -17,19 +18,33 @@ import com.example.checkapartment.databinding.FragmentSecondBinding;
 public class SecondFragment extends Fragment {
     private FragmentSecondBinding mbinding3;
     private String url;
+    private String tex1,text2;
+
     int valor=0,punt=0,resul=0;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-          //traer la foto
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //traer la foto
         if(getArguments()!= null){
-            url=getArguments().getString("URL");
+            url=getArguments().getString("imagendept");
+            tex1=getArguments().getString("text1depto");
+            text2=getArguments().getString("texto2depto");
         }
 
+    }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         //proyecto todos los componentes en la vista
 
         mbinding3= FragmentSecondBinding.inflate(inflater,container,false);
-       // Glide.with(getContext()).load(url).into(mbinding3.imagen2);
+      Glide.with(getContext()).load(url).into(mbinding3.imagen2);
+       mbinding3.text1ok.setText(tex1);
+       mbinding3.text2ok.setText(text2);
+      //Glide.with(getContext()).load(tex1).into(mbinding3.text1ok);
+      //  Glide.with(getContext()).load(text2).into(mbinding3.text2ok);
+
         //Glide.with(holder.itemView.getContext()).load(aparment.getUrlImageBuilding()).into(holder.imagen2);
          mbinding3.rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
              @Override
@@ -59,6 +74,7 @@ public class SecondFragment extends Fragment {
                  }
               resul=punt*valor;
               ///mbinding3.resul1.setText(resul);
+                 mbinding3.resul1.setText(String.valueOf(resul));
              }
 
          });
@@ -76,5 +92,14 @@ public class SecondFragment extends Fragment {
                         .navigate(R.id.action_secondFragment_to_loginFragment3);
             }
         });
+
+        mbinding3.guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mbinding3.resul1.setText(resul);
+            }
+        });
     }
+
+
 }

@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constLayout"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".SecondFragment"
     tools:layout_editor_absoluteY="81dp">
 
     <ImageView
         android:id="@+id/imagen2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +19,7 @@
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/text1"
+        android:id="@+id/text1ok"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginStart="9dp"
@@ -28,12 +28,12 @@
         app:layout_constraintTop_toBottomOf="@+id/imagen2" />
 
     <TextView
-        android:id="@+id/text2"
+        android:id="@+id/text2ok"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginStart="69dp"
         android:layout_marginTop="6dp"
-        app:layout_constraintStart_toEndOf="@+id/text1"
+        app:layout_constraintStart_toEndOf="@+id/text1ok"
         app:layout_constraintTop_toBottomOf="@+id/imagen2" />
 
     <Switch
@@ -44,7 +44,7 @@
         android:layout_marginTop="48dp"
         android:hint="@string/switc1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text1" />
+        app:layout_constraintTop_toBottomOf="@+id/text1ok" />
 
     <Switch
         android:id="@+id/switch2"
